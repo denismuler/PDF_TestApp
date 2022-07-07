@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CAE3F4A82875DBA60015D6E9 /* pdf.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CAE3F4A72875DBA60015D6E9 /* pdf.pdf */; };
+		CAE3F4AA287724290015D6E9 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE3F4A9287724290015D6E9 /* AccountViewController.swift */; };
+		CAE3F4AE287724530015D6E9 /* ToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE3F4AD287724530015D6E9 /* ToolsViewController.swift */; };
+		CAE3F4B428773A810015D6E9 /* c4611_sample_explain.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CAE3F4B128773A810015D6E9 /* c4611_sample_explain.pdf */; };
+		CAE3F4B528773A810015D6E9 /* dummy.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CAE3F4B228773A810015D6E9 /* dummy.pdf */; };
+		CAE3F4B628773A810015D6E9 /* sample-pdf.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CAE3F4B328773A810015D6E9 /* sample-pdf.pdf */; };
 		CAF6552628744B9900E53AB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF6552528744B9900E53AB3 /* AppDelegate.swift */; };
-		CAF6552A28744B9900E53AB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF6552928744B9900E53AB3 /* ViewController.swift */; };
+		CAF6552A28744B9900E53AB3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF6552928744B9900E53AB3 /* HomeViewController.swift */; };
 		CAF6552F28744B9C00E53AB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF6552E28744B9C00E53AB3 /* Assets.xcassets */; };
 		CAF6553228744B9C00E53AB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF6553028744B9C00E53AB3 /* LaunchScreen.storyboard */; };
 		CAF6553A28748A9600E53AB3 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF6553928748A9600E53AB3 /* CustomCollectionViewCell.swift */; };
@@ -16,9 +22,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CAE3F4A72875DBA60015D6E9 /* pdf.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pdf.pdf; sourceTree = "<group>"; };
+		CAE3F4A9287724290015D6E9 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		CAE3F4AD287724530015D6E9 /* ToolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsViewController.swift; sourceTree = "<group>"; };
+		CAE3F4B128773A810015D6E9 /* c4611_sample_explain.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = c4611_sample_explain.pdf; sourceTree = "<group>"; };
+		CAE3F4B228773A810015D6E9 /* dummy.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = dummy.pdf; sourceTree = "<group>"; };
+		CAE3F4B328773A810015D6E9 /* sample-pdf.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "sample-pdf.pdf"; sourceTree = "<group>"; };
 		CAF6552228744B9900E53AB3 /* DeftPDF_Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeftPDF_Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF6552528744B9900E53AB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CAF6552928744B9900E53AB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CAF6552928744B9900E53AB3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CAF6552E28744B9C00E53AB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAF6553128744B9C00E53AB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAF6553328744B9C00E53AB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,6 +49,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CAE3F4A22875BD070015D6E9 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				CAF6553B2874AD0F00E53AB3 /* TabBarViewController .swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		CAE3F4A32875BD120015D6E9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CAF6553928748A9600E53AB3 /* CustomCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CAE3F4AB287724310015D6E9 /* AccountViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CAE3F4A9287724290015D6E9 /* AccountViewController.swift */,
+			);
+			path = AccountViewController;
+			sourceTree = "<group>";
+		};
+		CAE3F4AC287724460015D6E9 /* ToolsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CAE3F4AD287724530015D6E9 /* ToolsViewController.swift */,
+			);
+			path = ToolsViewController;
+			sourceTree = "<group>";
+		};
+		CAE3F4AF287724B50015D6E9 /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CAF6552928744B9900E53AB3 /* HomeViewController.swift */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		CAE3F4B028773A5B0015D6E9 /* PDF */ = {
+			isa = PBXGroup;
+			children = (
+				CAE3F4B128773A810015D6E9 /* c4611_sample_explain.pdf */,
+				CAE3F4B228773A810015D6E9 /* dummy.pdf */,
+				CAE3F4B328773A810015D6E9 /* sample-pdf.pdf */,
+				CAE3F4A72875DBA60015D6E9 /* pdf.pdf */,
+			);
+			path = PDF;
+			sourceTree = "<group>";
+		};
 		CAF6551928744B9900E53AB3 = {
 			isa = PBXGroup;
 			children = (
@@ -56,10 +119,13 @@
 		CAF6552428744B9900E53AB3 /* DeftPDF_Test */ = {
 			isa = PBXGroup;
 			children = (
+				CAE3F4B028773A5B0015D6E9 /* PDF */,
 				CAF6552528744B9900E53AB3 /* AppDelegate.swift */,
-				CAF6552928744B9900E53AB3 /* ViewController.swift */,
-				CAF6553B2874AD0F00E53AB3 /* TabBarViewController .swift */,
-				CAF6553928748A9600E53AB3 /* CustomCollectionViewCell.swift */,
+				CAE3F4AF287724B50015D6E9 /* HomeViewController */,
+				CAE3F4A22875BD070015D6E9 /* TabBar */,
+				CAE3F4A32875BD120015D6E9 /* Cell */,
+				CAE3F4AB287724310015D6E9 /* AccountViewController */,
+				CAE3F4AC287724460015D6E9 /* ToolsViewController */,
 				CAF6552E28744B9C00E53AB3 /* Assets.xcassets */,
 				CAF6553028744B9C00E53AB3 /* LaunchScreen.storyboard */,
 				CAF6553328744B9C00E53AB3 /* Info.plist */,
@@ -125,6 +191,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAE3F4B428773A810015D6E9 /* c4611_sample_explain.pdf in Resources */,
+				CAE3F4A82875DBA60015D6E9 /* pdf.pdf in Resources */,
+				CAE3F4B528773A810015D6E9 /* dummy.pdf in Resources */,
+				CAE3F4B628773A810015D6E9 /* sample-pdf.pdf in Resources */,
 				CAF6553228744B9C00E53AB3 /* LaunchScreen.storyboard in Resources */,
 				CAF6552F28744B9C00E53AB3 /* Assets.xcassets in Resources */,
 			);
@@ -137,10 +207,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAF6552A28744B9900E53AB3 /* ViewController.swift in Sources */,
+				CAF6552A28744B9900E53AB3 /* HomeViewController.swift in Sources */,
 				CAF6552628744B9900E53AB3 /* AppDelegate.swift in Sources */,
+				CAE3F4AA287724290015D6E9 /* AccountViewController.swift in Sources */,
 				CAF6553C2874AD0F00E53AB3 /* TabBarViewController .swift in Sources */,
 				CAF6553A28748A9600E53AB3 /* CustomCollectionViewCell.swift in Sources */,
+				CAE3F4AE287724530015D6E9 /* ToolsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

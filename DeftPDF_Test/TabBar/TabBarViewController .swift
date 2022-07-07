@@ -20,13 +20,14 @@ class TabBar: UITabBarController {
     
     func setupVCs(){
         viewControllers = [
-            createNavController(for: ViewController(), title: NSLocalizedString ("File", comment: ""),
+            createNavController(for: HomeViewController(), title: NSLocalizedString ("File", comment: ""),
                                 image: UIImage(named: "files")!),
-            createNavController(for: ViewController(), title: NSLocalizedString("Tools", comment: ""),
+            createNavController(for: ToolsViewController(), title: NSLocalizedString("Tools", comment: ""),
                                 image: UIImage(named: "tools")!),
-            createNavController(for: ViewController(), title: NSLocalizedString( "Account", comment: ""),
+            createNavController(for: AccountViewController(), title: NSLocalizedString( "Account", comment: ""),
                                 image: UIImage (named: "account")!)
         ]
+        
     }
     
     fileprivate func createNavController(for rootViewController: UIViewController,

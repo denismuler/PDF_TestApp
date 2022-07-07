@@ -15,6 +15,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "")
         imageView.clipsToBounds = true
+        imageView.backgroundColor = .green
         return imageView
     }()
     
@@ -24,7 +25,14 @@ class CustomCollectionViewCell: UICollectionViewCell {
         label.textAlignment = .center
         return label
     }()
-
+    
+    private let myFileSize: UILabel = {
+        let label = UILabel()
+        label.text = "optional text"
+        label.textAlignment = .center
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.backgroundColor = .systemRed
@@ -46,18 +54,28 @@ class CustomCollectionViewCell: UICollectionViewCell {
                                width: contentView.frame.size.width-10,
                                height: 50)
         
-        myLabel.frame = CGRect(x: 5,
+        myImageView.frame = CGRect(x: 20,
                                y: 0,
-                               width: contentView.frame.size.width-10,
+                               width: contentView.frame.size.width-40,
                                height: contentView.frame.size.height-50)
+        
+        myFileSize.frame = CGRect(x: 5,
+                               y: contentView.frame.size.height-60,
+                               width: contentView.frame.size.width-5,
+                               height: 30)
     }
     
     public func configure(label: String) {
         myLabel.text = label
     }
     
+    public func configureFileSize(labelSize: String) {
+        myFileSize.text = labelSize
+    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         myLabel.text = nil
+        myFileSize.text = nil
     }
 }

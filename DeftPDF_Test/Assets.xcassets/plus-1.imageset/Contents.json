@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "Group 306.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "plus.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -20,7 +20,6 @@
   },
   "properties" : {
     "compression-type" : "lossless",
-    "localizable" : true,
     "template-rendering-intent" : "original"
   }
 }
