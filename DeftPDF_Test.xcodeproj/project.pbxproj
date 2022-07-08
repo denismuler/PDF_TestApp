@@ -7,27 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CAE3F4A82875DBA60015D6E9 /* pdf.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CAE3F4A72875DBA60015D6E9 /* pdf.pdf */; };
 		CAE3F4AA287724290015D6E9 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE3F4A9287724290015D6E9 /* AccountViewController.swift */; };
 		CAE3F4AE287724530015D6E9 /* ToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE3F4AD287724530015D6E9 /* ToolsViewController.swift */; };
-		CAE3F4B428773A810015D6E9 /* c4611_sample_explain.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CAE3F4B128773A810015D6E9 /* c4611_sample_explain.pdf */; };
-		CAE3F4B528773A810015D6E9 /* dummy.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CAE3F4B228773A810015D6E9 /* dummy.pdf */; };
-		CAE3F4B628773A810015D6E9 /* sample-pdf.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CAE3F4B328773A810015D6E9 /* sample-pdf.pdf */; };
 		CAF6552628744B9900E53AB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF6552528744B9900E53AB3 /* AppDelegate.swift */; };
 		CAF6552A28744B9900E53AB3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF6552928744B9900E53AB3 /* HomeViewController.swift */; };
 		CAF6552F28744B9C00E53AB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF6552E28744B9C00E53AB3 /* Assets.xcassets */; };
 		CAF6553228744B9C00E53AB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF6553028744B9C00E53AB3 /* LaunchScreen.storyboard */; };
 		CAF6553A28748A9600E53AB3 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF6553928748A9600E53AB3 /* CustomCollectionViewCell.swift */; };
 		CAF6553C2874AD0F00E53AB3 /* TabBarViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF6553B2874AD0F00E53AB3 /* TabBarViewController .swift */; };
+		FAB53F1628787BFD00985A89 /* FileManager+copyItem().swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB53F1528787BFD00985A89 /* FileManager+copyItem().swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CAE3F4A72875DBA60015D6E9 /* pdf.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pdf.pdf; sourceTree = "<group>"; };
 		CAE3F4A9287724290015D6E9 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		CAE3F4AD287724530015D6E9 /* ToolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsViewController.swift; sourceTree = "<group>"; };
-		CAE3F4B128773A810015D6E9 /* c4611_sample_explain.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = c4611_sample_explain.pdf; sourceTree = "<group>"; };
-		CAE3F4B228773A810015D6E9 /* dummy.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = dummy.pdf; sourceTree = "<group>"; };
-		CAE3F4B328773A810015D6E9 /* sample-pdf.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "sample-pdf.pdf"; sourceTree = "<group>"; };
 		CAF6552228744B9900E53AB3 /* DeftPDF_Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeftPDF_Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF6552528744B9900E53AB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAF6552928744B9900E53AB3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +29,7 @@
 		CAF6553328744B9C00E53AB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAF6553928748A9600E53AB3 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		CAF6553B2874AD0F00E53AB3 /* TabBarViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarViewController .swift"; sourceTree = "<group>"; };
+		FAB53F1528787BFD00985A89 /* FileManager+copyItem().swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+copyItem().swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,39 +59,28 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		CAE3F4AB287724310015D6E9 /* AccountViewController */ = {
+		CAE3F4AB287724310015D6E9 /* Account */ = {
 			isa = PBXGroup;
 			children = (
 				CAE3F4A9287724290015D6E9 /* AccountViewController.swift */,
 			);
-			path = AccountViewController;
+			path = Account;
 			sourceTree = "<group>";
 		};
-		CAE3F4AC287724460015D6E9 /* ToolsViewController */ = {
+		CAE3F4AC287724460015D6E9 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
 				CAE3F4AD287724530015D6E9 /* ToolsViewController.swift */,
 			);
-			path = ToolsViewController;
+			path = Tools;
 			sourceTree = "<group>";
 		};
-		CAE3F4AF287724B50015D6E9 /* HomeViewController */ = {
+		CAE3F4AF287724B50015D6E9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				CAF6552928744B9900E53AB3 /* HomeViewController.swift */,
 			);
-			path = HomeViewController;
-			sourceTree = "<group>";
-		};
-		CAE3F4B028773A5B0015D6E9 /* PDF */ = {
-			isa = PBXGroup;
-			children = (
-				CAE3F4B128773A810015D6E9 /* c4611_sample_explain.pdf */,
-				CAE3F4B228773A810015D6E9 /* dummy.pdf */,
-				CAE3F4B328773A810015D6E9 /* sample-pdf.pdf */,
-				CAE3F4A72875DBA60015D6E9 /* pdf.pdf */,
-			);
-			path = PDF;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		CAF6551928744B9900E53AB3 = {
@@ -119,18 +102,42 @@
 		CAF6552428744B9900E53AB3 /* DeftPDF_Test */ = {
 			isa = PBXGroup;
 			children = (
-				CAE3F4B028773A5B0015D6E9 /* PDF */,
 				CAF6552528744B9900E53AB3 /* AppDelegate.swift */,
-				CAE3F4AF287724B50015D6E9 /* HomeViewController */,
-				CAE3F4A22875BD070015D6E9 /* TabBar */,
-				CAE3F4A32875BD120015D6E9 /* Cell */,
-				CAE3F4AB287724310015D6E9 /* AccountViewController */,
-				CAE3F4AC287724460015D6E9 /* ToolsViewController */,
-				CAF6552E28744B9C00E53AB3 /* Assets.xcassets */,
-				CAF6553028744B9C00E53AB3 /* LaunchScreen.storyboard */,
-				CAF6553328744B9C00E53AB3 /* Info.plist */,
+				FAB53F1228787B5800985A89 /* UI */,
+				FAB53F1428787BCB00985A89 /* Extension */,
+				FAB53F1328787B9300985A89 /* Resources */,
 			);
 			path = DeftPDF_Test;
+			sourceTree = "<group>";
+		};
+		FAB53F1228787B5800985A89 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CAE3F4A32875BD120015D6E9 /* Cell */,
+				CAE3F4A22875BD070015D6E9 /* TabBar */,
+				CAE3F4AF287724B50015D6E9 /* Home */,
+				CAE3F4AB287724310015D6E9 /* Account */,
+				CAE3F4AC287724460015D6E9 /* Tools */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		FAB53F1328787B9300985A89 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CAF6553328744B9C00E53AB3 /* Info.plist */,
+				CAF6553028744B9C00E53AB3 /* LaunchScreen.storyboard */,
+				CAF6552E28744B9C00E53AB3 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FAB53F1428787BCB00985A89 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FAB53F1528787BFD00985A89 /* FileManager+copyItem().swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,10 +198,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAE3F4B428773A810015D6E9 /* c4611_sample_explain.pdf in Resources */,
-				CAE3F4A82875DBA60015D6E9 /* pdf.pdf in Resources */,
-				CAE3F4B528773A810015D6E9 /* dummy.pdf in Resources */,
-				CAE3F4B628773A810015D6E9 /* sample-pdf.pdf in Resources */,
 				CAF6553228744B9C00E53AB3 /* LaunchScreen.storyboard in Resources */,
 				CAF6552F28744B9C00E53AB3 /* Assets.xcassets in Resources */,
 			);
@@ -208,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAF6552A28744B9900E53AB3 /* HomeViewController.swift in Sources */,
+				FAB53F1628787BFD00985A89 /* FileManager+copyItem().swift in Sources */,
 				CAF6552628744B9900E53AB3 /* AppDelegate.swift in Sources */,
 				CAE3F4AA287724290015D6E9 /* AccountViewController.swift in Sources */,
 				CAF6553C2874AD0F00E53AB3 /* TabBarViewController .swift in Sources */,
@@ -353,7 +357,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TZALL639VQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DeftPDF_Test/Info.plist;
+				INFOPLIST_FILE = DeftPDF_Test/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -367,7 +371,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -380,7 +384,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TZALL639VQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DeftPDF_Test/Info.plist;
+				INFOPLIST_FILE = DeftPDF_Test/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -394,7 +398,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

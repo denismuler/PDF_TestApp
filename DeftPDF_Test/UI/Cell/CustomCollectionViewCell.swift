@@ -33,11 +33,18 @@ class CustomCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    private let myThreeDots: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "dots"), for: .normal)
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.backgroundColor = .systemRed
         contentView.addSubview(myLabel)
         contentView.addSubview(myImageView)
+        contentView.addSubview(myThreeDots)
         contentView.clipsToBounds = true
 
     }
@@ -50,27 +57,29 @@ class CustomCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         
         myLabel.frame = CGRect(x: 5,
-                               y: contentView.frame.size.height-50,
+                               y: contentView.frame.size.height-70,
                                width: contentView.frame.size.width-10,
-                               height: 50)
+                               height: 40)
         
         myImageView.frame = CGRect(x: 20,
-                               y: 0,
+                               y: 5,
                                width: contentView.frame.size.width-40,
-                               height: contentView.frame.size.height-50)
+                               height: contentView.frame.size.height-70)
         
         myFileSize.frame = CGRect(x: 5,
                                y: contentView.frame.size.height-60,
                                width: contentView.frame.size.width-5,
                                height: 30)
+        
+        myThreeDots.frame = CGRect(x: 50,
+                                   y: contentView.frame.size.height-20,
+                                   width: 30,
+                                   height: 10 )
+        
     }
     
     public func configure(label: String) {
         myLabel.text = label
-    }
-    
-    public func configureFileSize(labelSize: String) {
-        myFileSize.text = labelSize
     }
     
     override func prepareForReuse() {

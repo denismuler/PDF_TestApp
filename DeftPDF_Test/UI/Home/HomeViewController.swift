@@ -14,20 +14,15 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     private var collectionView: UICollectionView?
     
     let searchController = UISearchController()
+    private var pdfFIles: [PDFFIle] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //        let manager = FileManager.default
-        //
-        //        guard let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first else {
-        //            return
-        //        }
-        //        print(url.path)
-        //        let pdfView = PDFView(frame: self.view.bounds)
-        //        let fileURL = Bundle.main.url(forResource: "pdf", withExtension: "pdf")
-        //        pdfView.document = PDFDocument(url: fileURL!)
-        
+        configureUI()
+        retrieveItems()
+    }
+    
+    func configureUI() {
         navigationItem.searchController = searchController
         
         let layout = UICollectionViewFlowLayout()
@@ -80,15 +75,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return pdfFIles.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier,
                                                       for: indexPath) as! CustomCollectionViewCell
-        cell.configure(label: "Custom \(indexPath.row)")
-        cell.configureFileSize(labelSize: "Custom \(indexPath.row)")
+        cell.configure(label: pdfFIles[indexPath.row].name)
         return cell
     }
     
@@ -125,14 +119,63 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             pdfView.document = pdfDocument
         }
     }
+    
+    private func retrieveItems() {
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        do {
+            let fileURLs = try FileManager.default.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil)
+            print(fileURLs)
+            // Retrieve files
+            for fileURL in fileURLs {
+                // model PDFFile
+                self.pdfFIles.append(.init(name: fileURL.lastPathComponent))
+            }
+        } catch {
+            print("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
+        }
+    }
+}
+
+struct PDFFIle {
+    var name: String
 }
 
 extension HomeViewController: UIDocumentPickerDelegate {
     
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
+        let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let destinationPath = documentDirectory.appendingPathComponent(url.lastPathComponent)
+        print(url)
+        FileManager.default.copyItem(fileURL: url, to: destinationPath) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let string):
+                print(string)
+                self.retrieveItems()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        controller.dismiss(animated: true)
+    }
+    
     public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        guard controller.documentPickerMode == .import, let url = urls.first, let image = UIImage(contentsOfFile: url.path) else { return }
-        
-        //            documentImport(image)
+        let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        for url in urls {
+            print(url)
+            let destinationPath = documentDirectory.appendingPathComponent(url.lastPathComponent)
+            FileManager.default.copyItem(fileURL: url, to: destinationPath) { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success(let string):
+                    print(string)
+                    self.retrieveItems()
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+        self.retrieveItems()
         controller.dismiss(animated: true)
     }
     
@@ -140,4 +183,3 @@ extension HomeViewController: UIDocumentPickerDelegate {
         controller.dismiss(animated: true)
     }
 }
-
