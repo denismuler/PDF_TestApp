@@ -8,13 +8,13 @@
 import PDFKit
 import UIKit
 import MobileCoreServices
+import SnapKit
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, PDFViewDelegate {
     
     private var collectionView: UICollectionView?
-    
     let searchController = UISearchController()
-    private var pdfFIles: [PDFFIle] = []
+    private var pdfFIles: [PDFFileModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func configureUI() {
+        
         navigationItem.searchController = searchController
         
         let layout = UICollectionViewFlowLayout()
@@ -43,24 +44,42 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                                 forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
         collectionView.dataSource = self
         collectionView.delegate = self
-        view.addSubview(collectionView)
         collectionView.frame = view.bounds
-        
+        view.addSubview(collectionView)
         view.backgroundColor = .systemBackground
+        
         UITabBar.appearance().barTintColor = .systemBackground
         
-        let button = UIButton(frame: CGRect(x: 300, y: 650, width: 75, height: 75))
+        let button = UIButton(
+            frame: CGRect(x: 300, y: 650, width: 75, height: 75)
+        )
         button.backgroundColor = UIColor(red: 0.49, green: 0.30, blue: 1.00, alpha: 1.00)
         button.layer.cornerRadius = 0.5 * button.bounds.size.width
         button.setImage(UIImage(named:"plus-1"), for: .normal)
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        button.clipsToBounds = true
+        button.clipsToBounds = false
+        
+        button.snp.makeConstraints { make in
+            
+            make.right.bottom.equalTo(15)
+            make.height.equalTo(50)
+            make.left.equalTo(100)
+            
+//            make.left.equalToSuperview()
+//            make.top.equalToSuperview()
+//            make.right.equalToSuperview().inset(15)
+//            make.bottom.equalToSuperview().inset(60)
+        }
         
         let gradient = CAGradientLayer()
         gradient.colors = [UIColor(red: 0.49, green: 0.30, blue: 1.00, alpha: 1.00), UIColor.white.cgColor]
         gradient.frame = button.bounds
         button.layer.insertSublayer(gradient, at: 0)
         
+        let pop = popUpView()
+        view.addSubview(pop)
+        
+        self.view.bringSubviewToFront(pop)
         self.view.addSubview(button)
     }
     
@@ -74,27 +93,24 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         print("Button tapped")
     }
     
+    //MARK: - Collection View
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pdfFIles.count
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier,
                                                       for: indexPath) as! CustomCollectionViewCell
-        cell.configure(label: pdfFIles[indexPath.row].name)
+//        cell.configure(label: pdfFIles[indexPath.row].name)
+        cell.pdfFile = pdfFIles[indexPath.row]
         return cell
     }
     
-    private func resourceUrl(forFileName fileName: String) -> URL? {
-        if let resourceUrl = Bundle.main.url(forResource: "pdf",
-                                             withExtension: "pdf") {
-            return resourceUrl
-        }
-        
-        return nil
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let PDFVC:PDFViewController = self.storyboard?.instantiateViewController(withIdentifier: "PDFViewController") as! PDFViewController
     }
-    
+
     private func createPdfView(withFrame frame: CGRect) -> PDFView {
         let pdfView = PDFView(frame: frame)
         pdfView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -103,28 +119,12 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         return pdfView
     }
     
-    private func createPdfDocument(forFileName fileName: String) -> PDFDocument? {
-        if let resourceUrl = self.resourceUrl(forFileName: fileName) {
-            return PDFDocument(url: resourceUrl)
-        }
-        
-        return nil
-    }
-    
-    private func displayPdf() {
-        let pdfView = self.createPdfView(withFrame: self.view.bounds)
-        
-        if let pdfDocument = self.createPdfDocument(forFileName: "pdf") {
-            self.view.addSubview(pdfView)
-            pdfView.document = pdfDocument
-        }
-    }
-    
     private func retrieveItems() {
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         do {
             let fileURLs = try FileManager.default.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil)
             print(fileURLs)
+            print(documentsURL)
             // Retrieve files
             for fileURL in fileURLs {
                 // model PDFFile
@@ -134,10 +134,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             print("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
         }
     }
-}
-
-struct PDFFIle {
-    var name: String
 }
 
 extension HomeViewController: UIDocumentPickerDelegate {

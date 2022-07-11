@@ -13,7 +13,7 @@ extension FileManager {
         do {
             if FileManager.default.fileExists(atPath: dstURL.path) {
                 try FileManager.default.removeItem(at: dstURL)
-                completed(.success("Fuck you"))
+                completed(.success("Success"))
             }
             try FileManager.default.copyItem(at: srcURL, to: dstURL)
         } catch (let error) {

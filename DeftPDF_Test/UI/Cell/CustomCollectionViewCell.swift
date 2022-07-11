@@ -6,11 +6,20 @@
 //
 
 import UIKit
+import PDFKit
 
 class CustomCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "CustomCollectionViewCell"
-    
+    private var pdfFIles: [PDFFileModel] = []
+
+    var pdfFile: PDFFileModel?
+//    {
+////        didSet {
+////            myImageView.image = generatePdfThumbnail(of: CGSize(width: 100, height: 100), for: , atPage: 0)
+////        }
+//    }
+//    
     private let myImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "")
@@ -36,9 +45,33 @@ class CustomCollectionViewCell: UICollectionViewCell {
     private let myThreeDots: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "dots"), for: .normal)
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+
         return button
     }()
     
+    @objc func buttonAction(sender: UIButton!) {
+             print("Button Clicked")
+        }
+//    func pdfThumbnail(url: URL, width: CGFloat = 240) -> UIImage? {
+//      guard let data = try? Data(contentsOf: url),
+//      let page = PDFDocument(data: data)?.page(at: 0) else {
+//        return nil
+//      }
+//        let pageSize = page.bounds(for: .mediaBox)
+//        let pdfScale = width / pageSize.width
+//
+//        return page.thumbnail(of: .zero, for: .mediaBox)
+//    }
+    
+    func generatePdfThumbnail(of thumbnailSize: CGSize , for documentUrl: URL, atPage pageIndex: Int) -> UIImage? {
+        let pdfDocument = PDFDocument(url: documentUrl)
+        let pdfDocumentPage = pdfDocument?.page(at: pageIndex)
+        return pdfDocumentPage?.thumbnail(of: thumbnailSize, for: PDFDisplayBox.trimBox)
+    }
+    let thumbnailSize = CGSize(width: 100, height: 100)
+//    let thumbnail = generatePdfThumbnail(of: thumbnailSize, for: url, atPage: 0)
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.backgroundColor = .systemRed
@@ -46,7 +79,6 @@ class CustomCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(myImageView)
         contentView.addSubview(myThreeDots)
         contentView.clipsToBounds = true
-
     }
     
     required init?(coder: NSCoder) {

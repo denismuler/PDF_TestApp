@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3005E6846AC7C4366C20F143 /* Pods_DeftPDF_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC07A630CF974DFB83C19E2 /* Pods_DeftPDF_Test.framework */; };
+		CA1E636828798D9700B742F5 /* PDFViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1E636728798D9700B742F5 /* PDFViewController .swift */; };
+		CA1E636A28799EF700B742F5 /* PDFFileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1E636928799EF600B742F5 /* PDFFileModel.swift */; };
+		CA346B4A287C78ED007A6C6B /* popUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA346B49287C78ED007A6C6B /* popUpView.swift */; };
 		CAE3F4AA287724290015D6E9 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE3F4A9287724290015D6E9 /* AccountViewController.swift */; };
 		CAE3F4AE287724530015D6E9 /* ToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE3F4AD287724530015D6E9 /* ToolsViewController.swift */; };
 		CAF6552628744B9900E53AB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF6552528744B9900E53AB3 /* AppDelegate.swift */; };
@@ -19,6 +23,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		042E5290EF083DFE8A845ED1 /* Pods-DeftPDF_Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeftPDF_Test.debug.xcconfig"; path = "Target Support Files/Pods-DeftPDF_Test/Pods-DeftPDF_Test.debug.xcconfig"; sourceTree = "<group>"; };
+		5874FF739C188424DF616928 /* Pods-DeftPDF_Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeftPDF_Test.release.xcconfig"; path = "Target Support Files/Pods-DeftPDF_Test/Pods-DeftPDF_Test.release.xcconfig"; sourceTree = "<group>"; };
+		BAC07A630CF974DFB83C19E2 /* Pods_DeftPDF_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeftPDF_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA1E636728798D9700B742F5 /* PDFViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFViewController .swift"; sourceTree = "<group>"; };
+		CA1E636928799EF600B742F5 /* PDFFileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFFileModel.swift; sourceTree = "<group>"; };
+		CA346B49287C78ED007A6C6B /* popUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popUpView.swift; sourceTree = "<group>"; };
 		CAE3F4A9287724290015D6E9 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		CAE3F4AD287724530015D6E9 /* ToolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsViewController.swift; sourceTree = "<group>"; };
 		CAF6552228744B9900E53AB3 /* DeftPDF_Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeftPDF_Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,12 +47,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3005E6846AC7C4366C20F143 /* Pods_DeftPDF_Test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E29B3629B230F98E71D89B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				042E5290EF083DFE8A845ED1 /* Pods-DeftPDF_Test.debug.xcconfig */,
+				5874FF739C188424DF616928 /* Pods-DeftPDF_Test.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B8CC0E5C3CE73B35D6FD55D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAC07A630CF974DFB83C19E2 /* Pods_DeftPDF_Test.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CAE3F4A22875BD070015D6E9 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +108,9 @@
 			isa = PBXGroup;
 			children = (
 				CAF6552928744B9900E53AB3 /* HomeViewController.swift */,
+				CA346B49287C78ED007A6C6B /* popUpView.swift */,
+				CA1E636728798D9700B742F5 /* PDFViewController .swift */,
+				CA1E636928799EF600B742F5 /* PDFFileModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -88,6 +120,8 @@
 			children = (
 				CAF6552428744B9900E53AB3 /* DeftPDF_Test */,
 				CAF6552328744B9900E53AB3 /* Products */,
+				3E29B3629B230F98E71D89B9 /* Pods */,
+				B8CC0E5C3CE73B35D6FD55D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,9 +181,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAF6553628744B9C00E53AB3 /* Build configuration list for PBXNativeTarget "DeftPDF_Test" */;
 			buildPhases = (
+				9116BDF52B5534A824614538 /* [CP] Check Pods Manifest.lock */,
 				CAF6551E28744B9900E53AB3 /* Sources */,
 				CAF6551F28744B9900E53AB3 /* Frameworks */,
 				CAF6552028744B9900E53AB3 /* Resources */,
+				4D156B75C51A41146252CFAC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -205,18 +241,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4D156B75C51A41146252CFAC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeftPDF_Test/Pods-DeftPDF_Test-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeftPDF_Test/Pods-DeftPDF_Test-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeftPDF_Test/Pods-DeftPDF_Test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9116BDF52B5534A824614538 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DeftPDF_Test-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CAF6551E28744B9900E53AB3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CAF6552A28744B9900E53AB3 /* HomeViewController.swift in Sources */,
+				CA1E636A28799EF700B742F5 /* PDFFileModel.swift in Sources */,
 				FAB53F1628787BFD00985A89 /* FileManager+copyItem().swift in Sources */,
 				CAF6552628744B9900E53AB3 /* AppDelegate.swift in Sources */,
 				CAE3F4AA287724290015D6E9 /* AccountViewController.swift in Sources */,
+				CA1E636828798D9700B742F5 /* PDFViewController .swift in Sources */,
 				CAF6553C2874AD0F00E53AB3 /* TabBarViewController .swift in Sources */,
 				CAF6553A28748A9600E53AB3 /* CustomCollectionViewCell.swift in Sources */,
 				CAE3F4AE287724530015D6E9 /* ToolsViewController.swift in Sources */,
+				CA346B4A287C78ED007A6C6B /* popUpView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +431,7 @@
 		};
 		CAF6553728744B9C00E53AB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 042E5290EF083DFE8A845ED1 /* Pods-DeftPDF_Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -377,6 +459,7 @@
 		};
 		CAF6553828744B9C00E53AB3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5874FF739C188424DF616928 /* Pods-DeftPDF_Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
